@@ -145,10 +145,6 @@ footer .name {
     .nav-menu li a {
         font-size: 1rem;
     }
-    
-    .container {
-        height: 80vh;
-    }
 
     .menu-item {
         font-size: clamp(1.5rem, 4vw, 5rem);
