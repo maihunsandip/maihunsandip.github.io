@@ -438,6 +438,10 @@ footer .name {
     height: 100vh;
   }
   
+  .container{
+    height: 80vh;
+  }
+  
   .nav-menu {
     width: 12rem;
   }
