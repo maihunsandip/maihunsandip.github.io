@@ -437,6 +437,10 @@ footer .name {
     position: fixed;
     height: 100vh;
   }
+  
+  .container{
+    height: 90vh;
+  }
 
   .nav-menu {
     width: 12rem;
