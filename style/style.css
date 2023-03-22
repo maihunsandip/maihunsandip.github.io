@@ -2,69 +2,15 @@
   --purple: rgb(121, 14, 242);
   --violet: rgb(194, 36, 252);
   --pink: rgb(241, 32, 102);
-
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-@font-face {
-  font-family: 'Aquire';
-  src: url("/fonts/Aquire.otf");
-  src: url("/fonts/Aquire.otf") format("opentype");
-  font-style: normal;
-}
-
-@keyframes background-pan {
-  from {
-    background-position: 0% center;
-  }
-
-  to {
-    background-position: -200% center;
-  }
-}
-
-@keyframes scale {
-
-  from,
-  to {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(180deg);
-  }
-
-}
-
-@keyframes rotate-blob {
-  from {
-    rotate: 0deg;
-  }
-
-  50% {
-    scale: 1 1.5;
-  }
-
-  to {
-    rotate: 360deg;
-  }
-}
 
 body {
   margin: 0;
   padding: 0;
   background-color: black;
+  background-attachment: fixed;
   height: 80vh;
   overflow: hidden;
 }
@@ -129,18 +75,10 @@ h1 {
   font-size: 6rem;
 }
 
-h1:hover {
-  color: white;
-  font-family: 'Aquire';
-  font-size: 6rem;
-  cursor: none;
-}
-
 p {
   position: relative;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
-  /* left: 3.2rem; */
   bottom: 4rem;
   font-size: 1.5rem;
 }
@@ -355,6 +293,60 @@ footer .name {
   animation-delay: 8.5s;
 }
 
+@font-face {
+  font-family: 'Aquire';
+  src: url("/fonts/Aquire.otf");
+  src: url("/fonts/Aquire.otf") format("opentype");
+  font-style: normal;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+
+  from,
+  to {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+
+}
+
+@keyframes rotate-blob {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
 @keyframes before_active {
   0% {
     width: 90%;
@@ -436,5 +428,94 @@ footer .name {
 
   100% {
     transform: translate(-50%, 100px) scale(1);
+  }
+}
+
+@media all and (max-width: 580px) {
+  body {
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+  }
+
+  .nav-menu {
+    width: 12rem;
+  }
+
+  .nav-menu li {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+  }
+
+  .nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-family: "Space Mono", monospace;
+  }
+
+  h1 {
+    font-size: 3rem;
+    display: block;
+  }
+
+  p {
+    position: relative;
+    bottom: 2rem;
+    font-size: .8rem;
+    text-align: center;
+  }
+
+  .btn {
+    top: 50px;
+    width: 120px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .btn:hover {
+    width: 130px;
+    height: 50px;
+  }
+
+
+
+  .btn.active {
+    width: 200px;
+    height: 20px;
+  }
+
+  footer {
+    padding-right: 0;
+  }
+
+  .sm li a img {
+    height: 22px;
+  }
+
+  @keyframes btn_width {
+    0% {
+      width: 120px;
+      height: 40px;
+    }
+
+    20%,
+    70% {
+      width: 150px;
+      height: 50px;
+    }
+
+    80%,
+    90% {
+      width: 100px;
+      height: 100px;
+    }
+
+    100% {
+      width: 150px;
+      height: 50px;
+    }
   }
 }
