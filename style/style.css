@@ -4,7 +4,7 @@
   --pink: rgb(241, 32, 102);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 body {
   margin: 0;
@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,7 +71,7 @@ main {
 
 h1 {
   color: white;
-  font-family: 'Aquire';
+  font-family: "Aquire";
   font-size: 6rem;
 }
 
@@ -83,12 +83,12 @@ p {
   font-size: 1.5rem;
 }
 
-p>.magic {
+p > .magic {
   display: inline-block;
   position: relative;
 }
 
-p>.magic>.magic-star {
+p > .magic > .magic-star {
   --size: clamp(20px, 1.5vw, 30px);
 
   animation: scale 700ms ease forwards;
@@ -104,25 +104,26 @@ p span:hover {
   cursor: none;
 }
 
-p>.magic>.magic-star>svg {
+p > .magic > .magic-star > svg {
   display: block;
   opacity: 0.7;
   animation: rotate 1000ms linear infinite;
 }
 
-p>.magic>.magic-star>svg>path {
+p > .magic > .magic-star > svg > path {
   fill: var(--violet);
 }
 
-
-p>.magic>.magic-text {
+p > .magic > .magic-text {
   animation: background-pan 3s linear infinite;
   font-weight: 600;
-  background: linear-gradient(to right,
-      var(--purple),
-      var(--violet),
-      var(--pink),
-      var(--purple));
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -154,7 +155,7 @@ footer {
 }
 
 footer .name {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .sm li a img {
@@ -171,9 +172,7 @@ footer .name {
   translate: -50% -50%;
   border-radius: 50%;
 
-  background: linear-gradient(to right,
-      rgb(253, 47, 116),
-      rgb(114, 49, 245));
+  background: linear-gradient(to right, rgb(253, 47, 116), rgb(114, 49, 245));
 
   animation: rotate-blob 20s infinite;
 }
@@ -269,7 +268,7 @@ footer .name {
 }
 
 .btn.active::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -281,7 +280,7 @@ footer .name {
 }
 
 .btn.active::after {
-  content: '\f00c';
+  content: "\f00c";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -294,7 +293,7 @@ footer .name {
 }
 
 @font-face {
-  font-family: 'Aquire';
+  font-family: "Aquire";
   src: url("/fonts/Aquire.otf");
   src: url("/fonts/Aquire.otf") format("opentype");
   font-style: normal;
@@ -311,7 +310,6 @@ footer .name {
 }
 
 @keyframes scale {
-
   from,
   to {
     transform: scale(0);
@@ -330,7 +328,6 @@ footer .name {
   to {
     transform: rotate(180deg);
   }
-
 }
 
 @keyframes rotate-blob {
@@ -437,11 +434,11 @@ footer .name {
     position: fixed;
     height: 100vh;
   }
-  
-  .container{
+
+  .container {
     height: 80vh;
   }
-  
+
   .nav-menu {
     width: 12rem;
   }
@@ -467,7 +464,7 @@ footer .name {
   p {
     position: relative;
     bottom: 2rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-align: center;
   }
 
@@ -483,8 +480,6 @@ footer .name {
     width: 130px;
     height: 50px;
   }
-
-
 
   .btn.active {
     width: 200px;
