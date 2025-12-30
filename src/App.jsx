@@ -12,7 +12,7 @@ function App() {
       <Projects />
       <Contact />
       <footer>
-        <p className='text-sm text-gray-700 mt-4 text-center'>&copy; 2024 Sandip Kole. All rights reserved.</p>
+        <p className='text-sm text-gray-500 text-center bg-gray-800/70 p-2 md:p-5'>Made with &#10084;&#65039; by Sandip Kole.</p>
       </footer>
     </div>
   );

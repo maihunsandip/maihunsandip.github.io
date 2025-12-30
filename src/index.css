@@ -38,3 +38,8 @@ body::-webkit-scrollbar-thumb {
   background: hsla(215, 31%, 17%, 1);
   border-radius: 1em;
 }
+
+/* Enable smooth scrolling for in-page anchor links */
+html {
+  scroll-behavior: smooth;
+}
