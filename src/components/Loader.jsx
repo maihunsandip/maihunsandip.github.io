@@ -1,36 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
 
-const Loader = () => {
-    return (
-        <StyledWrapper>
-            <div className="loader">
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="text"><span>Loading</span></div>
-                <div className="line" />
-            </div>
-        </StyledWrapper>
-    );
+const Loader = ({ loading }) => {
+  const [shouldRender, setShouldRender] = useState(loading);
+
+  useEffect(() => {
+    if (loading) {
+      setShouldRender(true);
+    } else {
+      const timeout = setTimeout(() => {
+        setShouldRender(false);
+      }, 600); // must match CSS transition
+
+      return () => clearTimeout(timeout);
+    }
+  }, [loading]);
+
+  if (!shouldRender) return null;
+
+  return (
+
+    <StyledWrapper className={!loading ? "fade-out" : ""}>
+      <div className="loader">
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="text"><span>Loading</span></div>
+        <div className="line" />
+      </div>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000; /* optional background */
   z-index: 9999;
+
+  opacity: 1;
+  transition: opacity 0.6s ease;
+
+  &.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
   
   .loader {
     --main-size: 4em;

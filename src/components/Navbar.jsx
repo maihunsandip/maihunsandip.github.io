@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
+import logo from '../assets/logo.png';
+import Button from "./Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,10 +37,10 @@ const Navbar = () => {
     <nav
       className={`navbar w-full fixed top-0 left-0 z-50 transform transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
-      } backdrop-blur-md bg-[#131313]/80 flex justify-between p-4 shadow-md`}
+      } backdrop-blur-md bg-[#131313]/80 flex justify-between px-10 md:px-60 py-4  shadow-md`}
     >
       <div className="navbar__logo">
-        <h3 className="text-2xl font-bold">S</h3>
+        <img className="w-8" src={logo} alt="logo" />
       </div>
 
       <div className="md:hidden">
@@ -52,19 +54,24 @@ const Navbar = () => {
 
       {/* Desktop links (hidden on small screens) */}
       <ul className="navbar__links hidden md:flex md:flex-row md:items-center md:space-x-8 md:w-auto md:h-auto md:visible md:p-0 md:text-sm text-center font-bold">
-        <li className="py-2 md:py-0">
+        <li className="py-2 md:py-0 audiowide-regular">
           <a href="#home">Home</a>
         </li>
-        <li className="py-2 md:py-0">
+        <li className="py-2 md:py-0 audiowide-regular">
           <a href="#projects">Projects</a>
         </li>
         {/* <li className="py-2 md:py-0">
           <a href="#about">About</a>
         </li> */}
-        <li className="py-2 md:py-0">
+        <li className="py-2 md:py-0 audiowide-regular">
           <a href="#contact">Contact</a>
         </li>
       </ul>
+
+      <div className="hidden md:flex md:items-center">
+        <Button />
+      </div>
+      
 
       {/* end of nav content */}
     </nav>
@@ -72,7 +79,7 @@ const Navbar = () => {
     {/* Mobile overlay + full-screen menu (rendered outside the nav so it won't be moved by nav transforms) */}
     {isOpen && (
       <div
-        className="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 z-40 md:hidden"
+        className=" inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 z-40 md:hidden"
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
       />
@@ -87,10 +94,11 @@ const Navbar = () => {
         <X size={28} />
       </button>
 
-      <a onClick={() => setIsOpen(false)} href="#home" className="block py-2">Home</a>
-      <a onClick={() => setIsOpen(false)} href="#projects" className="block py-2">Projects</a>
+      <a onClick={() => setIsOpen(false)} href="#home" className="block py-2 audiowide-regular">Home</a>
+      <a onClick={() => setIsOpen(false)} href="#projects" className="block py-2 audiowide-regular">Projects</a>
       {/* <a onClick={() => setIsOpen(false)} href="#about" className="block py-2">About</a> */}
-      <a onClick={() => setIsOpen(false)} href="#contact" className="block py-2">Contact</a>
+      <a onClick={() => setIsOpen(false)} href="#contact" className="block py-2 audiowide-regular">Contact</a>
+      <Button />
     </div>
     </>
   );
