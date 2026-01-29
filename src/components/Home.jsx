@@ -15,10 +15,10 @@ const Home = () => {
     return (
         <div id='home' className='flex flex-col items-center w-full gap-5 mb-15 mt-0 md:flex-row py-10 px-5 md:px-10'>
             <div className='flex flex-col md:flex-row items-center w-full md:w-[50%] py-15 md:p-5 rounded-2xl bg-gray-900 shadow-lg md:h-60 mt-10 md:mt-15'>
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQHdar3jp2gVgw/profile-displayphoto-scale_400_400/B4DZgfIlyZG8Ag-/0/1752869005560?e=1768435200&v=beta&t=n8FC5tSKWdFeG8BoAriKEjExpJtQZYndYPPad5HqSe4" alt="Profile Picture" className='w-50 h-50 rounded-full' />
+                <img src="https://res.cloudinary.com/df2nbd3q3/image/upload/v1769678610/sandip_ygiyta.png" alt="Profile Picture" className='w-50 h-50 rounded-full' />
                 <div className='flex flex-col items-center md:gap-2 md:items-start md:ml-6'>
                     <h1 className='text-3xl md:text-5xl font-bold'>Sandip Kole</h1>
-                    <h4 className='md:text-xl text-xl mt-2 '>IT Engineer | Web Developer</h4>
+                    <h4 className='md:text-xl text-xl mt-2 '>Observability Engineer</h4>
                     <div className='flex space-x-6 mt-4'>
                         <a className='border border-amber-50 p-1 rounded-lg bg-gray-800' href="https://github.com/maihunsandip" target="_blank" rel="noopener noreferrer">
                             <Github size={25} />
