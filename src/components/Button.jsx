@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Button = () => {
   return (
     <StyledWrapper>
-      <a href="../assets/Sandip_Kole_Resume.pdf" download="Sandip_Kole_Resume.pdf">
+      <a href="/Sandip_Kole_Resume.pdf" download="Sandip_Kole_Resume.pdf">
         <div className="button" data-tooltip="Size: 140K">
         <div className="button-wrapper">
           <div className="text">Resume</div>
